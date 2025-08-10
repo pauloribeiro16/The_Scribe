@@ -1,0 +1,660 @@
+========================= DOCUMENT 1 (Technique AssetInventory) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'AssetInventory', 'technique_label': 'Asset Inventory'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: AssetInventory (Asset Inventory)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 1 ========================
+
+
+========================= DOCUMENT 2 (Technique ProcessAnalysis) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'ProcessAnalysis', 'technique_label': 'Process Analysis'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: ProcessAnalysis (Process Analysis)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 2 ========================
+
+
+========================= DOCUMENT 3 (Technique MessageHardening) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'MessageHardening', 'technique_label': 'Message Hardening'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: MessageHardening (Message Hardening)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 3 ========================
+
+
+========================= DOCUMENT 4 (Technique n3488723beeab4831b3cbc3750b931109b1418) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'n3488723beeab4831b3cbc3750b931109b1418', 'technique_label': 'n3488723beeab4831b3cbc3750b931109b1418'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: n3488723beeab4831b3cbc3750b931109b1418 (n3488723beeab4831b3cbc3750b931109b1418)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 4 ========================
+
+
+========================= DOCUMENT 5 (Technique SourceCodeHardening) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'SourceCodeHardening', 'technique_label': 'Source Code Hardening'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: SourceCodeHardening (Source Code Hardening)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 5 ========================
+
+
+========================= DOCUMENT 6 (Technique n3488723beeab4831b3cbc3750b931109b326) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'n3488723beeab4831b3cbc3750b931109b326', 'technique_label': 'n3488723beeab4831b3cbc3750b931109b326'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: n3488723beeab4831b3cbc3750b931109b326 (n3488723beeab4831b3cbc3750b931109b326)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 6 ========================
+
+
+========================= DOCUMENT 7 (Technique NetworkIsolation) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'NetworkIsolation', 'technique_label': 'Network Isolation'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: NetworkIsolation (Network Isolation)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 7 ========================
+
+
+========================= DOCUMENT 8 (Technique RestoreObject) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'RestoreObject', 'technique_label': 'Restore Object'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: RestoreObject (Restore Object)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 8 ========================
+
+
+========================= DOCUMENT 9 (Technique ProcessEviction) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'ProcessEviction', 'technique_label': 'Process Eviction'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: ProcessEviction (Process Eviction)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 9 ========================
+
+
+========================= DOCUMENT 10 (Technique AccessMediation) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'AccessMediation', 'technique_label': 'Access Mediation'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: AccessMediation (Access Mediation)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 10 ========================
+
+
+========================= DOCUMENT 11 (Technique CredentialHardening) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'CredentialHardening', 'technique_label': 'Credential Hardening'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: CredentialHardening (Credential Hardening)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 11 ========================
+
+
+========================= DOCUMENT 12 (Technique SystemMapping) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'SystemMapping', 'technique_label': 'System Mapping'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: SystemMapping (System Mapping)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 12 ========================
+
+
+========================= DOCUMENT 13 (Technique NetworkTrafficAnalysis) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'NetworkTrafficAnalysis', 'technique_label': 'Network Traffic Analysis'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: NetworkTrafficAnalysis (Network Traffic Analysis)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 13 ========================
+
+
+========================= DOCUMENT 14 (Technique AgentAuthentication) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'AgentAuthentication', 'technique_label': 'Agent Authentication'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: AgentAuthentication (Agent Authentication)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 14 ========================
+
+
+========================= DOCUMENT 15 (Technique FileAnalysis) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'FileAnalysis', 'technique_label': 'File Analysis'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: FileAnalysis (File Analysis)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 15 ========================
+
+
+========================= DOCUMENT 16 (Technique OperationalActivityMapping) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'OperationalActivityMapping', 'technique_label': 'Operational Activity Mapping'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: OperationalActivityMapping (Operational Activity Mapping)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 16 ========================
+
+
+========================= DOCUMENT 17 (Technique PlatformHardening) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'PlatformHardening', 'technique_label': 'Platform Hardening'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: PlatformHardening (Platform Hardening)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 17 ========================
+
+
+========================= DOCUMENT 18 (Technique n3488723beeab4831b3cbc3750b931109b240) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'n3488723beeab4831b3cbc3750b931109b240', 'technique_label': 'n3488723beeab4831b3cbc3750b931109b240'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: n3488723beeab4831b3cbc3750b931109b240 (n3488723beeab4831b3cbc3750b931109b240)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 18 ========================
+
+
+========================= DOCUMENT 19 (Technique PlatformMonitoring) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'PlatformMonitoring', 'technique_label': 'Platform Monitoring'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: PlatformMonitoring (Platform Monitoring)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 19 ========================
+
+
+========================= DOCUMENT 20 (Technique NetworkMapping) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'NetworkMapping', 'technique_label': 'Network Mapping'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: NetworkMapping (Network Mapping)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 20 ========================
+
+
+========================= DOCUMENT 21 (Technique ExecutionIsolation) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'ExecutionIsolation', 'technique_label': 'Execution Isolation'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: ExecutionIsolation (Execution Isolation)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 21 ========================
+
+
+========================= DOCUMENT 22 (Technique UserBehaviorAnalysis) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'UserBehaviorAnalysis', 'technique_label': 'User Behavior Analysis'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: UserBehaviorAnalysis (User Behavior Analysis)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 22 ========================
+
+
+========================= DOCUMENT 23 (Technique AccessPolicyAdministration) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'AccessPolicyAdministration', 'technique_label': 'Access Policy Administration'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: AccessPolicyAdministration (Access Policy Administration)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 23 ========================
+
+
+========================= DOCUMENT 24 (Technique ObjectEviction) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'ObjectEviction', 'technique_label': 'Object Eviction'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: ObjectEviction (Object Eviction)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 24 ========================
+
+
+========================= DOCUMENT 25 (Technique CredentialEviction) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'CredentialEviction', 'technique_label': 'Credential Eviction'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: CredentialEviction (Credential Eviction)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 25 ========================
+
+
+========================= DOCUMENT 26 (Technique DecoyEnvironment) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'DecoyEnvironment', 'technique_label': 'Decoy Environment'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: DecoyEnvironment (Decoy Environment)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 26 ========================
+
+
+========================= DOCUMENT 27 (Technique ContentFiltering) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'ContentFiltering', 'technique_label': 'Content Filtering'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: ContentFiltering (Content Filtering)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 27 ========================
+
+
+========================= DOCUMENT 28 (Technique n3488723beeab4831b3cbc3750b931109b71) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'n3488723beeab4831b3cbc3750b931109b71', 'technique_label': 'n3488723beeab4831b3cbc3750b931109b71'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: n3488723beeab4831b3cbc3750b931109b71 (n3488723beeab4831b3cbc3750b931109b71)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 28 ========================
+
+
+========================= DOCUMENT 29 (Technique IdentifierAnalysis) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'IdentifierAnalysis', 'technique_label': 'Identifier Analysis'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: IdentifierAnalysis (Identifier Analysis)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 29 ========================
+
+
+========================= DOCUMENT 30 (Technique DecoyObject) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'DecoyObject', 'technique_label': 'Decoy Object'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: DecoyObject (Decoy Object)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 30 ========================
+
+
+========================= DOCUMENT 31 (Technique ApplicationHardening) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'ApplicationHardening', 'technique_label': 'Application Hardening'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: ApplicationHardening (Application Hardening)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 31 ========================
+
+
+========================= DOCUMENT 32 (Technique MessageAnalysis) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'MessageAnalysis', 'technique_label': 'Message Analysis'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: MessageAnalysis (Message Analysis)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 32 ========================
+
+
+========================= DOCUMENT 33 (Technique RestoreAccess) =========================
+
+--- EXTRACTED METADATA ---
+
+{'source_document': 'D3FEND', 'technique_id': 'RestoreAccess', 'technique_label': 'Restore Access'}
+
+
+--- FULL TEXT TO BE EMBEDDED (MARKDOWN FORMAT) ---
+
+From D3FEND Ontology:
+### Defensive Technique: RestoreAccess (Restore Access)
+
+**Definition:**
+No definition provided.
+
+**KB Article:**
+
+======================= END OF DOCUMENT 33 ========================
+
+

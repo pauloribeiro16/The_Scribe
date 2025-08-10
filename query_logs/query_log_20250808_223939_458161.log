@@ -1,0 +1,430 @@
+2025-08-08 22:39:39 - 
+========================= START OF QUERY =========================
+2025-08-08 22:39:39 - User Query: what are the best controls for ransamware ?
+2025-08-08 22:43:22 - 
+========================= DECOMPOSITION PLAN =========================
+2025-08-08 22:43:22 - {
+  "level": "Unified",
+  "selection": "Documents",
+  "result": [
+    "NIST SP 800-53 Rev. 5",
+    "D3FEND"
+  ]
+}
+2025-08-08 22:43:24 - 
+--- Retrieved Nodes (Chunks) for 'Consolidated from all retrieval stages...' ---
+2025-08-08 22:43:24 - 
+[Node 1 | Score: 0.6043]
+2025-08-08 22:43:24 - Content: From NIST SP 800-53 Rev. 5:
+### Base Control: CM-7 (LEAST FUNCTIONALITY)
+
+**Control Statement:** a. Configure the system to provide only [Assignment: organization-defined mission essential capabilities]; and b. Prohibit or restrict the use of the following functions, ports, protocols, software, and/or services: [Assignment: organization-defined prohibited or restricted functions, system ports, protocols, software, and/or services].
+
+**Discussion:** Systems provide a wide variety of functions and services. Some of the functions and services routinely provided by default may not be necessary to support essential organizational missions, functions, or operations. Additionally, it is sometimes convenient to provide multiple services from a single system component, but doing so increases risk over limiting the services provided by that single component. Where feasible, organizations limit component functionality to a single function per component. Organizations consider removing unused or unnecessary software and disabling unused or unnecessary physical and logical ports and protocols to prevent unauthorized connection of components, transfer of information, and tunneling. Organizations employ network scanning tools, intrusion detection and prevention systems, and end-point protection technologies, such as firewalls and host-based intrusion detection systems, to identify and prevent the use of prohibited functions, protocols, ports, and services. Least functionality can also be achieved as part of the fundamental design and development of the system (see SA- 8, SC-2, and SC-3). Related Controls: AC-3, AC-4, CM-2, CM-5, CM-6, CM-11, RA-5, SA-4, SA-5, SA-8, SA-9, SA-15, SC- 2, SC-3, SC-7, SC-37, SI-4.
+2025-08-08 22:43:24 - 
+[Node 2 | Score: 0.6017]
+2025-08-08 22:43:24 - Content: From NIST SP 800-53 Rev. 5:
+### Base Control: CM-11 (USER-INSTALLED SOFTWARE)
+
+**Control Statement:** a. Establish [Assignment: organization-defined policies] governing the installation of software by users; b. Enforce software installation policies through the following methods: [Assignment: organization-defined methods]; and c. Monitor policy compliance [Assignment: organization-defined frequency].
+
+**Discussion:** If provided the necessary privileges, users can install software in organizational systems. To maintain control over the software installed, organizations identify permitted and prohibited actions regarding software installation. Permitted software installations include updates and security patches to existing software and downloading new applications from organization-approved “app stores.” Prohibited software installations include software with unknown or suspect pedigrees or software that organizations consider potentially malicious. Policies selected for governing user-installed software are organization-developed or provided by some external entity. Policy enforcement methods can include procedural methods and automated methods. Related Controls: AC-3, AU-6, CM-2, CM-3, CM-5, CM-6, CM-7, CM-8, PL-4, SI-4, SI-7.
+2025-08-08 22:43:24 - 
+[Node 3 | Score: 0.5973]
+2025-08-08 22:43:24 - Content: From NIST SP 800-53 Rev. 5:
+### Base Control: CM-10 (SOFTWARE USAGE RESTRICTIONS)
+
+**Control Statement:** a. Use software and associated documentation in accordance with contract agreements and copyright laws; b. Track the use of software and associated documentation protected by quantity licenses to control copying and distribution; and c. Control and document the use of peer-to-peer file sharing technology to ensure that this capability is not used for the unauthorized distribution, display, performance, or reproduction of copyrighted work.
+
+**Discussion:** Software license tracking can be accomplished by manual or automated methods, depending on organizational needs. Examples of contract agreements include software license agreements and non-disclosure agreements. Related Controls: AC-17, AU-6, CM-7, CM-8, PM-30, SC-7.
+2025-08-08 22:43:24 - 
+[Node 4 | Score: 0.5876]
+2025-08-08 22:43:24 - Content: From NIST SP 800-53 Rev. 5:
+### Base Control: SA-6 (SOFTWARE USAGE RESTRICTIONS)
+
+**Control Statement:** 
+
+**Discussion:**
+2025-08-08 22:43:24 - 
+[Node 5 | Score: 0.5876]
+2025-08-08 22:43:24 - Content: From NIST SP 800-53 Rev. 5:
+### Base Control: SC-15 (COLLABORATIVE COMPUTING DEVICES AND APPLICATIONS)
+
+**Control Statement:** a. Prohibit remote activation of collaborative computing devices and applications with the following exceptions: [Assignment: organization-defined exceptions where remote activation is to be allowed]; and b. Provide an explicit indication of use to users physically present at the devices.
+
+**Discussion:** Collaborative computing devices and applications include remote meeting devices and applications, networked white boards, cameras, and microphones. The explicit indication of use includes signals to users when collaborative computing devices and applications are activated. Related Controls: AC-21, SC-42.
+2025-08-08 22:43:24 - 
+[Node 6 | Score: 0.5851]
+2025-08-08 22:43:24 - Content: From NIST SP 800-53 Rev. 5:
+### Base Control: SC-34 (NON-MODIFIABLE EXECUTABLE PROGRAMS)
+
+**Control Statement:** For [Assignment: organization-defined system components], load and execute: a. The operating environment from hardware-enforced, read-only media; and b. The following applications from hardware-enforced, read-only media: [Assignment: organization-defined applications].
+
+**Discussion:** The operating environment for a system contains the code that hosts applications, including operating systems, executives, or virtual machine monitors (i.e., hypervisors). It can also include certain applications that run directly on hardware platforms. Hardware-enforced, read-only media include Compact Disc-Recordable (CD-R) and Digital Versatile Disc-Recordable (DVD-R) disk drives as well as one-time, programmable, read-only memory. The use of non- modifiable storage ensures the integrity of software from the point of creation of the read-only image. The use of reprogrammable, read-only memory can be accepted as read-only media provided that integrity can be adequately protected from the point of initial writing to the insertion of the memory into the system, and there are reliable hardware protections against reprogramming the memory while installed in organizational systems. Related Controls: AC-3, SI-7, SI-14.
+2025-08-08 22:43:24 - 
+[Node 7 | Score: 0.5848]
+2025-08-08 22:43:24 - Content: From NIST SP 800-53 Rev. 5:
+### Base Control: SA-10 (DEVELOPER CONFIGURATION MANAGEMENT)
+
+**Control Statement:** Require the developer of the system, system component, or system service to: a. Perform configuration management during system, component, or service [Selection (one or more): design; development; implementation; operation; disposal]; b. Document, manage, and control the integrity of changes to [Assignment: organization- defined configuration items under configuration management]; c. Implement only organization-approved changes to the system, component, or service; d. Document approved changes to the system, component, or service and the potential security and privacy impacts of such changes; and e. Track security flaws and flaw resolution within the system, component, or service and report findings to [Assignment: organization-defined personnel].
+
+**Discussion:** Organizations consider the quality and completeness of configuration management activities conducted by developers as direct evidence of applying effective security controls. Controls include protecting the master copies of material used to generate security-relevant portions of the system hardware, software, and firmware from unauthorized modification or destruction. Maintaining the integrity of changes to the system, system component, or system service requires strict configuration control throughout the system development life cycle to track authorized changes and prevent unauthorized changes. The configuration items that are placed under configuration management include the formal model; the functional, high-level, and low-level design specifications; other design data; implementation documentation; source code and hardware schematics; the current running version of the object code; tools for comparing new versions of security-relevant hardware descriptions and source code with previous versions; and test fixtures and documentation. Depending on the mission and business needs of organizations and the nature of the contractual relationships in place, developers may provide configuration management support during the operations and maintenance stage of the system development life cycle. Related Controls: CM-2, CM-3, CM-4, CM-7, CM-9, SA-4, SA-5, SA-8, SA-15, SI-2, SR-3, SR-4, SR-5, SR-6.
+2025-08-08 22:43:24 - 
+[Node 8 | Score: 0.5845]
+2025-08-08 22:43:24 - Content: From NIST SP 800-53 Rev. 5:
+### Base Control: SA-7 (USER-INSTALLED SOFTWARE)
+
+**Control Statement:** 
+
+**Discussion:**
+2025-08-08 22:43:24 - 
+[Node 9 | Score: 0.5814]
+2025-08-08 22:43:24 - Content: From NIST SP 800-53 Rev. 5:
+### Base Control: RA-10 (THREAT HUNTING)
+
+**Control Statement:** a. Establish and maintain a cyber threat hunting capability to: 1. Search for indicators of compromise in organizational systems; and 2. Detect, track, and disrupt threats that evade existing controls; and b. Employ the threat hunting capability [Assignment: organization-defined frequency].
+
+**Discussion:** Threat hunting is an active means of cyber defense in contrast to traditional protection measures, such as firewalls, intrusion detection and prevention systems, quarantining malicious code in sandboxes, and Security Information and Event Management technologies and systems. Cyber threat hunting involves proactively searching organizational systems, networks, and infrastructure for advanced threats. The objective is to track and disrupt cyber adversaries as early as possible in the attack sequence and to measurably improve the speed and accuracy of organizational responses. Indications of compromise include unusual network traffic, unusual file changes, and the presence of malicious code. Threat hunting teams leverage existing threat intelligence and may create new threat intelligence, which is shared with peer organizations, Information Sharing and Analysis Organizations (ISAO), Information Sharing and Analysis Centers (ISAC), and relevant government departments and agencies. Related Controls: CA-2, CA-7, CA-8, RA-3, RA-5, RA-6, SI-4.
+2025-08-08 22:43:24 - 
+[Node 10 | Score: 0.5793]
+2025-08-08 22:43:24 - Content: From NIST SP 800-53 Rev. 5:
+### Base Control: SC-39 (PROCESS ISOLATION)
+
+**Control Statement:** Maintain a separate execution domain for each executing system process.
+
+**Discussion:** Systems can maintain separate execution domains for each executing process by assigning each process a separate address space. Each system process has a distinct address space so that communication between processes is performed in a manner controlled through the security functions, and one process cannot modify the executing code of another process. Maintaining separate execution domains for executing processes can be achieved, for example, by implementing separate address spaces. Process isolation technologies, including sandboxing or virtualization, logically separate software and firmware from other software, firmware, and data. Process isolation helps limit the access of potentially untrusted software to other system resources. The capability to maintain separate execution domains is available in commercial operating systems that employ multi-state processor technologies. Related Controls: AC-3, AC-4, AC-6, AC-25, SA-8, SC-2, SC-3, SI-16.
+2025-08-08 22:43:24 - 
+[Node 11 | Score: 0.5586]
+2025-08-08 22:43:24 - Content: From D3FEND Ontology:
+### Concept: Windows Remote Management (ID: T1028)
+
+**Is a type of:** Lateral Movement Technique
+
+**Definition:**
+Windows Remote Management (WinRM) is the name of both a Windows service and a protocol that allows a user to interact with a remote system (e.g., run an executable, modify the Registry, modify services). (Citation: Microsoft WinRM) It may be called with the <code>winrm</code> command or by any number of programs such as PowerShell. (Citation: Jacobsen 2014)
+2025-08-08 22:43:24 - 
+[Node 12 | Score: 0.5506]
+2025-08-08 22:43:24 - Content: From D3FEND Ontology:
+### Concept: Version Control Tool (ID: VersionControlTool)
+
+**Is a type of:** Developer Application
+
+**Definition:**
+Version control tools are tools that used to conduct version control. A  component of software configuration management, version control, also known as revision control, source control, or source code management systems are systems responsible for the management of changes to documents, computer programs, large web sites, and other collections of information. Changes are usually identified by a number or letter code, termed the "revision number", "revision level", or simply "revision". For example, an initial set of files is "revision 1". When the first change is made, the resulting set is "revision 2", and so on. Each revision is associated with a timestamp and the person making the change. Revisions can be compared, restored, and with some types of files, merged.
+2025-08-08 22:43:24 - 
+[Node 13 | Score: 0.5500]
+2025-08-08 22:43:24 - Content: From D3FEND Ontology:
+### Concept: Runtime Resource Management Control Element in a Component Built to Run on Application Servers (ID: CWE-1065)
+
+**Is a type of:** Improper Adherence to Coding Standards
+
+**Definition:**
+The product uses deployed components from application servers, but it also uses low-level functions/methods for management of resources, instead of the API provided by the application server.
+2025-08-08 22:43:24 - 
+[Node 14 | Score: 0.5498]
+2025-08-08 22:43:24 - Content: From D3FEND Ontology:
+### Concept: Registry Run Keys / Startup Folder (ID: T1060)
+
+**Is a type of:** Persistence Technique
+
+**Definition:**
+Adversaries may achieve persistence by adding a program to a startup folder or referencing it with a Registry run key. Adding an entry to the "run keys" in the Registry or startup folder will cause the program referenced to be executed when a user logs in. (Citation: Microsoft Run Key) These programs will be executed under the context of the user and will have the account's associated permissions level.
+2025-08-08 22:43:24 - 
+[Node 15 | Score: 0.5486]
+2025-08-08 22:43:24 - Content: From D3FEND Ontology:
+### Concept: Registry Run Keys / Startup Folder (ID: T1547.001)
+
+**Is a type of:** Boot or Logon Autostart Execution
+
+**Definition:**
+Adversaries may achieve persistence by adding a program to a startup folder or referencing it with a Registry run key. Adding an entry to the "run keys" in the Registry or startup folder will cause the program referenced to be executed when a user logs in.(Citation: Microsoft Run Key) These programs will be executed under the context of the user and will have the account's associated permissions level.
+2025-08-08 22:43:24 - 
+[Node 16 | Score: 0.5470]
+2025-08-08 22:43:24 - Content: From D3FEND Ontology:
+### Concept: Windows Remote Management (ID: T1028)
+
+**Is a type of:** Execution Technique
+
+**Definition:**
+Windows Remote Management (WinRM) is the name of both a Windows service and a protocol that allows a user to interact with a remote system (e.g., run an executable, modify the Registry, modify services). (Citation: Microsoft WinRM) It may be called with the <code>winrm</code> command or by any number of programs such as PowerShell. (Citation: Jacobsen 2014)
+2025-08-08 22:43:24 - 
+[Node 17 | Score: 0.5466]
+2025-08-08 22:43:24 - Content: From D3FEND Ontology:
+### Concept: Remote Access Software (ID: T1219)
+
+**Is a type of:** Command and Control Technique
+
+**Definition:**
+An adversary may use legitimate desktop support and remote access software to establish an interactive command and control channel to target systems within networks. These services, such as `VNC`, `Team Viewer`, `AnyDesk`, `ScreenConnect`, `LogMein`, `AmmyyAdmin`, and other remote monitoring and management (RMM) tools, are commonly used as legitimate technical support software and may be allowed by application control within a target environment.(Citation: Symantec Living off the Land)(Citation: CrowdStrike 2015 Global Threat Report)(Citation: CrySyS Blog TeamSpy)
+2025-08-08 22:43:24 - 
+[Node 18 | Score: 0.5425]
+2025-08-08 22:43:24 - Content: From D3FEND Ontology:
+### Concept: OT Run Command (ID: OTRunCommand)
+
+**Is a type of:** OT Modify Device Operating Mode Command
+
+**Definition:**
+Commands a device to start or resume a service/program.
+2025-08-08 22:43:24 - 
+[Node 19 | Score: 0.5395]
+2025-08-08 22:43:24 - Content: From D3FEND Ontology:
+### Concept: Process Control (ID: CWE-114)
+
+**Is a type of:** External Control of File Name or Path
+
+**Definition:**
+Executing commands or loading libraries from an untrusted source or in an untrusted environment can cause an application to execute malicious commands (and payloads) on behalf of an attacker.
+2025-08-08 22:43:24 - 
+[Node 20 | Score: 0.5355]
+2025-08-08 22:43:24 - Content: From D3FEND Ontology:
+### Relationship: runs (ID: runs)
+
+**Is a type of relationship:** may-run
+**Inverse Relationship:** None
+
+**Definition:**
+x runs y: To carry out a process or program y, as on a computer or a machine x; where y may be a large software assembly or a specific module or instruction.  Examples: "run a new program on the Mac"; "the computer runs the application software".
+
+**Usage Example:**
+*   **Subject (Connects From):** `Any`
+*   **Object (Connects To):** `Any`
+*   **Sentence Form:** A `Any` **runs** a `Any`.
+2025-08-08 22:43:24 - ------------------------------------------------------------
+2025-08-08 22:43:24 - 
+========================= DECOMPOSITION PLAN =========================
+2025-08-08 22:43:24 - {
+  "step": "Per-Source Reranking",
+  "sources": [
+    "NIST SP 800-53",
+    "D3FEND"
+  ]
+}
+2025-08-08 22:43:25 - 
+========================= RE-RANKED NODES FOR MAIN QUERY: FOR SOURCE: NIST SP 800-53... =========================
+2025-08-08 22:43:25 - 
+[Re-Ranked Node 1 | Score: -5.3754635]
+2025-08-08 22:43:25 - Content: From NIST SP 800-53 Rev. 5:
+### Base Control: SA-10 (DEVELOPER CONFIGURATION MANAGEMENT)
+
+**Control Statement:** Require the developer of the system, system component, or system service to: a. Perform configuration management during system, component, or service [Selection (one or more): design; development; implementation; operation; disposal]; b. Document, manage, and control the integrity of changes to [Assignment: organization- defined configuration items under configuration management]; c. Implement only organization-approved changes to the system, component, or service; d. Document approved changes to the system, component, or service and the potential security and privacy impacts of such changes; and e. Track security flaws and flaw resolution within the system, component, or service and report findings to [Assignment: organization-defined personnel].
+
+**Discussion:** Organizations consider the quality and completeness of configuration management activities conducted by developers as direct evidence of applying effective security controls. Controls include protecting the master copies of material used to generate security-relevant portions of the system hardware, software, and firmware from unauthorized modification or destruction. Maintaining the integrity of changes to the system, system component, or system service requires strict configuration control throughout the system development life cycle to track authorized changes and prevent unauthorized changes. The configuration items that are placed under configuration management include the formal model; the functional, high-level, and low-level design specifications; other design data; implementation documentation; source code and hardware schematics; the current running version of the object code; tools for comparing new versions of security-relevant hardware descriptions and source code with previous versions; and test fixtures and documentation. Depending on the mission and business needs of organizations and the nature of the contractual relationships in place, developers may provide configuration management support during the operations and maintenance stage of the system development life cycle. Related Controls: CM-2, CM-3, CM-4, CM-7, CM-9, SA-4, SA-5, SA-8, SA-15, SI-2, SR-3, SR-4, SR-5, SR-6.
+2025-08-08 22:43:25 - 
+[Re-Ranked Node 2 | Score: -8.050899]
+2025-08-08 22:43:25 - Content: From NIST SP 800-53 Rev. 5:
+### Base Control: SC-34 (NON-MODIFIABLE EXECUTABLE PROGRAMS)
+
+**Control Statement:** For [Assignment: organization-defined system components], load and execute: a. The operating environment from hardware-enforced, read-only media; and b. The following applications from hardware-enforced, read-only media: [Assignment: organization-defined applications].
+
+**Discussion:** The operating environment for a system contains the code that hosts applications, including operating systems, executives, or virtual machine monitors (i.e., hypervisors). It can also include certain applications that run directly on hardware platforms. Hardware-enforced, read-only media include Compact Disc-Recordable (CD-R) and Digital Versatile Disc-Recordable (DVD-R) disk drives as well as one-time, programmable, read-only memory. The use of non- modifiable storage ensures the integrity of software from the point of creation of the read-only image. The use of reprogrammable, read-only memory can be accepted as read-only media provided that integrity can be adequately protected from the point of initial writing to the insertion of the memory into the system, and there are reliable hardware protections against reprogramming the memory while installed in organizational systems. Related Controls: AC-3, SI-7, SI-14.
+2025-08-08 22:43:25 - 
+[Re-Ranked Node 3 | Score: -8.728544]
+2025-08-08 22:43:25 - Content: From NIST SP 800-53 Rev. 5:
+### Base Control: CM-7 (LEAST FUNCTIONALITY)
+
+**Control Statement:** a. Configure the system to provide only [Assignment: organization-defined mission essential capabilities]; and b. Prohibit or restrict the use of the following functions, ports, protocols, software, and/or services: [Assignment: organization-defined prohibited or restricted functions, system ports, protocols, software, and/or services].
+
+**Discussion:** Systems provide a wide variety of functions and services. Some of the functions and services routinely provided by default may not be necessary to support essential organizational missions, functions, or operations. Additionally, it is sometimes convenient to provide multiple services from a single system component, but doing so increases risk over limiting the services provided by that single component. Where feasible, organizations limit component functionality to a single function per component. Organizations consider removing unused or unnecessary software and disabling unused or unnecessary physical and logical ports and protocols to prevent unauthorized connection of components, transfer of information, and tunneling. Organizations employ network scanning tools, intrusion detection and prevention systems, and end-point protection technologies, such as firewalls and host-based intrusion detection systems, to identify and prevent the use of prohibited functions, protocols, ports, and services. Least functionality can also be achieved as part of the fundamental design and development of the system (see SA- 8, SC-2, and SC-3). Related Controls: AC-3, AC-4, CM-2, CM-5, CM-6, CM-11, RA-5, SA-4, SA-5, SA-8, SA-9, SA-15, SC- 2, SC-3, SC-7, SC-37, SI-4.
+2025-08-08 22:43:25 - 
+[Re-Ranked Node 4 | Score: -8.960994]
+2025-08-08 22:43:25 - Content: From NIST SP 800-53 Rev. 5:
+### Base Control: RA-10 (THREAT HUNTING)
+
+**Control Statement:** a. Establish and maintain a cyber threat hunting capability to: 1. Search for indicators of compromise in organizational systems; and 2. Detect, track, and disrupt threats that evade existing controls; and b. Employ the threat hunting capability [Assignment: organization-defined frequency].
+
+**Discussion:** Threat hunting is an active means of cyber defense in contrast to traditional protection measures, such as firewalls, intrusion detection and prevention systems, quarantining malicious code in sandboxes, and Security Information and Event Management technologies and systems. Cyber threat hunting involves proactively searching organizational systems, networks, and infrastructure for advanced threats. The objective is to track and disrupt cyber adversaries as early as possible in the attack sequence and to measurably improve the speed and accuracy of organizational responses. Indications of compromise include unusual network traffic, unusual file changes, and the presence of malicious code. Threat hunting teams leverage existing threat intelligence and may create new threat intelligence, which is shared with peer organizations, Information Sharing and Analysis Organizations (ISAO), Information Sharing and Analysis Centers (ISAC), and relevant government departments and agencies. Related Controls: CA-2, CA-7, CA-8, RA-3, RA-5, RA-6, SI-4.
+2025-08-08 22:43:25 - 
+[Re-Ranked Node 5 | Score: -9.470465]
+2025-08-08 22:43:25 - Content: From NIST SP 800-53 Rev. 5:
+### Base Control: SC-39 (PROCESS ISOLATION)
+
+**Control Statement:** Maintain a separate execution domain for each executing system process.
+
+**Discussion:** Systems can maintain separate execution domains for each executing process by assigning each process a separate address space. Each system process has a distinct address space so that communication between processes is performed in a manner controlled through the security functions, and one process cannot modify the executing code of another process. Maintaining separate execution domains for executing processes can be achieved, for example, by implementing separate address spaces. Process isolation technologies, including sandboxing or virtualization, logically separate software and firmware from other software, firmware, and data. Process isolation helps limit the access of potentially untrusted software to other system resources. The capability to maintain separate execution domains is available in commercial operating systems that employ multi-state processor technologies. Related Controls: AC-3, AC-4, AC-6, AC-25, SA-8, SC-2, SC-3, SI-16.
+2025-08-08 22:43:25 - ------------------------------------------------------------
+2025-08-08 22:43:25 - 
+========================= RE-RANKED NODES FOR MAIN QUERY: FOR SOURCE: D3FEND... =========================
+2025-08-08 22:43:25 - 
+[Re-Ranked Node 1 | Score: -8.17654]
+2025-08-08 22:43:25 - Content: From D3FEND Ontology:
+### Concept: Runtime Resource Management Control Element in a Component Built to Run on Application Servers (ID: CWE-1065)
+
+**Is a type of:** Improper Adherence to Coding Standards
+
+**Definition:**
+The product uses deployed components from application servers, but it also uses low-level functions/methods for management of resources, instead of the API provided by the application server.
+2025-08-08 22:43:25 - 
+[Re-Ranked Node 2 | Score: -10.63542]
+2025-08-08 22:43:25 - Content: From D3FEND Ontology:
+### Concept: Version Control Tool (ID: VersionControlTool)
+
+**Is a type of:** Developer Application
+
+**Definition:**
+Version control tools are tools that used to conduct version control. A  component of software configuration management, version control, also known as revision control, source control, or source code management systems are systems responsible for the management of changes to documents, computer programs, large web sites, and other collections of information. Changes are usually identified by a number or letter code, termed the "revision number", "revision level", or simply "revision". For example, an initial set of files is "revision 1". When the first change is made, the resulting set is "revision 2", and so on. Each revision is associated with a timestamp and the person making the change. Revisions can be compared, restored, and with some types of files, merged.
+2025-08-08 22:43:25 - 
+[Re-Ranked Node 3 | Score: -11.026008]
+2025-08-08 22:43:25 - Content: From D3FEND Ontology:
+### Concept: Registry Run Keys / Startup Folder (ID: T1547.001)
+
+**Is a type of:** Boot or Logon Autostart Execution
+
+**Definition:**
+Adversaries may achieve persistence by adding a program to a startup folder or referencing it with a Registry run key. Adding an entry to the "run keys" in the Registry or startup folder will cause the program referenced to be executed when a user logs in.(Citation: Microsoft Run Key) These programs will be executed under the context of the user and will have the account's associated permissions level.
+2025-08-08 22:43:25 - 
+[Re-Ranked Node 4 | Score: -11.147465]
+2025-08-08 22:43:25 - Content: From D3FEND Ontology:
+### Concept: Registry Run Keys / Startup Folder (ID: T1060)
+
+**Is a type of:** Persistence Technique
+
+**Definition:**
+Adversaries may achieve persistence by adding a program to a startup folder or referencing it with a Registry run key. Adding an entry to the "run keys" in the Registry or startup folder will cause the program referenced to be executed when a user logs in. (Citation: Microsoft Run Key) These programs will be executed under the context of the user and will have the account's associated permissions level.
+2025-08-08 22:43:25 - 
+[Re-Ranked Node 5 | Score: -11.155019]
+2025-08-08 22:43:25 - Content: From D3FEND Ontology:
+### Concept: Remote Access Software (ID: T1219)
+
+**Is a type of:** Command and Control Technique
+
+**Definition:**
+An adversary may use legitimate desktop support and remote access software to establish an interactive command and control channel to target systems within networks. These services, such as `VNC`, `Team Viewer`, `AnyDesk`, `ScreenConnect`, `LogMein`, `AmmyyAdmin`, and other remote monitoring and management (RMM) tools, are commonly used as legitimate technical support software and may be allowed by application control within a target environment.(Citation: Symantec Living off the Land)(Citation: CrowdStrike 2015 Global Threat Report)(Citation: CrySyS Blog TeamSpy)
+2025-08-08 22:43:25 - ------------------------------------------------------------
+2025-08-08 22:43:25 - 
+========================= FINAL PROMPT TO LLM =========================
+2025-08-08 22:43:25 - System: You are a highly intelligent cybersecurity research analyst. Your primary task is to provide a comprehensive and accurate answer to the user's question, using the provided text excerpts as your primary source of truth.
+
+**Core Instructions:**
+1. **Prioritize the Context:** Your answer must be grounded in the facts and details found in the provided context. This is your most authoritative source for specific information.
+2. **Augment with Your Knowledge:** You are encouraged to use your own general knowledge to explain concepts, connect ideas, and provide a more complete and well-structured answer. However, your general knowledge must not contradict the information given in the context.
+3. **Synthesize and Relate:** If the context provides information from multiple sources (e.g., a CWE weakness and a NIST control), your main task is to synthesize these pieces of information. Explain the relationship between them clearly.
+4. **Address the User Directly:** Formulate the response as a direct, helpful answer to the user's question.
+
+--- Provided Context ---
+From NIST SP 800-53 Rev. 5:
+### Base Control: SA-10 (DEVELOPER CONFIGURATION MANAGEMENT)
+
+**Control Statement:** Require the developer of the system, system component, or system service to: a. Perform configuration management during system, component, or service [Selection (one or more): design; development; implementation; operation; disposal]; b. Document, manage, and control the integrity of changes to [Assignment: organization- defined configuration items under configuration management]; c. Implement only organization-approved changes to the system, component, or service; d. Document approved changes to the system, component, or service and the potential security and privacy impacts of such changes; and e. Track security flaws and flaw resolution within the system, component, or service and report findings to [Assignment: organization-defined personnel].
+
+**Discussion:** Organizations consider the quality and completeness of configuration management activities conducted by developers as direct evidence of applying effective security controls. Controls include protecting the master copies of material used to generate security-relevant portions of the system hardware, software, and firmware from unauthorized modification or destruction. Maintaining the integrity of changes to the system, system component, or system service requires strict configuration control throughout the system development life cycle to track authorized changes and prevent unauthorized changes. The configuration items that are placed under configuration management include the formal model; the functional, high-level, and low-level design specifications; other design data; implementation documentation; source code and hardware schematics; the current running version of the object code; tools for comparing new versions of security-relevant hardware descriptions and source code with previous versions; and test fixtures and documentation. Depending on the mission and business needs of organizations and the nature of the contractual relationships in place, developers may provide configuration management support during the operations and maintenance stage of the system development life cycle. Related Controls: CM-2, CM-3, CM-4, CM-7, CM-9, SA-4, SA-5, SA-8, SA-15, SI-2, SR-3, SR-4, SR-5, SR-6.
+
+---
+
+From NIST SP 800-53 Rev. 5:
+### Base Control: SC-34 (NON-MODIFIABLE EXECUTABLE PROGRAMS)
+
+**Control Statement:** For [Assignment: organization-defined system components], load and execute: a. The operating environment from hardware-enforced, read-only media; and b. The following applications from hardware-enforced, read-only media: [Assignment: organization-defined applications].
+
+**Discussion:** The operating environment for a system contains the code that hosts applications, including operating systems, executives, or virtual machine monitors (i.e., hypervisors). It can also include certain applications that run directly on hardware platforms. Hardware-enforced, read-only media include Compact Disc-Recordable (CD-R) and Digital Versatile Disc-Recordable (DVD-R) disk drives as well as one-time, programmable, read-only memory. The use of non- modifiable storage ensures the integrity of software from the point of creation of the read-only image. The use of reprogrammable, read-only memory can be accepted as read-only media provided that integrity can be adequately protected from the point of initial writing to the insertion of the memory into the system, and there are reliable hardware protections against reprogramming the memory while installed in organizational systems. Related Controls: AC-3, SI-7, SI-14.
+
+---
+
+From NIST SP 800-53 Rev. 5:
+### Base Control: CM-7 (LEAST FUNCTIONALITY)
+
+**Control Statement:** a. Configure the system to provide only [Assignment: organization-defined mission essential capabilities]; and b. Prohibit or restrict the use of the following functions, ports, protocols, software, and/or services: [Assignment: organization-defined prohibited or restricted functions, system ports, protocols, software, and/or services].
+
+**Discussion:** Systems provide a wide variety of functions and services. Some of the functions and services routinely provided by default may not be necessary to support essential organizational missions, functions, or operations. Additionally, it is sometimes convenient to provide multiple services from a single system component, but doing so increases risk over limiting the services provided by that single component. Where feasible, organizations limit component functionality to a single function per component. Organizations consider removing unused or unnecessary software and disabling unused or unnecessary physical and logical ports and protocols to prevent unauthorized connection of components, transfer of information, and tunneling. Organizations employ network scanning tools, intrusion detection and prevention systems, and end-point protection technologies, such as firewalls and host-based intrusion detection systems, to identify and prevent the use of prohibited functions, protocols, ports, and services. Least functionality can also be achieved as part of the fundamental design and development of the system (see SA- 8, SC-2, and SC-3). Related Controls: AC-3, AC-4, CM-2, CM-5, CM-6, CM-11, RA-5, SA-4, SA-5, SA-8, SA-9, SA-15, SC- 2, SC-3, SC-7, SC-37, SI-4.
+
+---
+
+From NIST SP 800-53 Rev. 5:
+### Base Control: RA-10 (THREAT HUNTING)
+
+**Control Statement:** a. Establish and maintain a cyber threat hunting capability to: 1. Search for indicators of compromise in organizational systems; and 2. Detect, track, and disrupt threats that evade existing controls; and b. Employ the threat hunting capability [Assignment: organization-defined frequency].
+
+**Discussion:** Threat hunting is an active means of cyber defense in contrast to traditional protection measures, such as firewalls, intrusion detection and prevention systems, quarantining malicious code in sandboxes, and Security Information and Event Management technologies and systems. Cyber threat hunting involves proactively searching organizational systems, networks, and infrastructure for advanced threats. The objective is to track and disrupt cyber adversaries as early as possible in the attack sequence and to measurably improve the speed and accuracy of organizational responses. Indications of compromise include unusual network traffic, unusual file changes, and the presence of malicious code. Threat hunting teams leverage existing threat intelligence and may create new threat intelligence, which is shared with peer organizations, Information Sharing and Analysis Organizations (ISAO), Information Sharing and Analysis Centers (ISAC), and relevant government departments and agencies. Related Controls: CA-2, CA-7, CA-8, RA-3, RA-5, RA-6, SI-4.
+
+---
+
+From NIST SP 800-53 Rev. 5:
+### Base Control: SC-39 (PROCESS ISOLATION)
+
+**Control Statement:** Maintain a separate execution domain for each executing system process.
+
+**Discussion:** Systems can maintain separate execution domains for each executing process by assigning each process a separate address space. Each system process has a distinct address space so that communication between processes is performed in a manner controlled through the security functions, and one process cannot modify the executing code of another process. Maintaining separate execution domains for executing processes can be achieved, for example, by implementing separate address spaces. Process isolation technologies, including sandboxing or virtualization, logically separate software and firmware from other software, firmware, and data. Process isolation helps limit the access of potentially untrusted software to other system resources. The capability to maintain separate execution domains is available in commercial operating systems that employ multi-state processor technologies. Related Controls: AC-3, AC-4, AC-6, AC-25, SA-8, SC-2, SC-3, SI-16.
+
+---
+
+From D3FEND Ontology:
+### Concept: Runtime Resource Management Control Element in a Component Built to Run on Application Servers (ID: CWE-1065)
+
+**Is a type of:** Improper Adherence to Coding Standards
+
+**Definition:**
+The product uses deployed components from application servers, but it also uses low-level functions/methods for management of resources, instead of the API provided by the application server.
+
+---
+
+From D3FEND Ontology:
+### Concept: Version Control Tool (ID: VersionControlTool)
+
+**Is a type of:** Developer Application
+
+**Definition:**
+Version control tools are tools that used to conduct version control. A  component of software configuration management, version control, also known as revision control, source control, or source code management systems are systems responsible for the management of changes to documents, computer programs, large web sites, and other collections of information. Changes are usually identified by a number or letter code, termed the "revision number", "revision level", or simply "revision". For example, an initial set of files is "revision 1". When the first change is made, the resulting set is "revision 2", and so on. Each revision is associated with a timestamp and the person making the change. Revisions can be compared, restored, and with some types of files, merged.
+
+---
+
+From D3FEND Ontology:
+### Concept: Registry Run Keys / Startup Folder (ID: T1547.001)
+
+**Is a type of:** Boot or Logon Autostart Execution
+
+**Definition:**
+Adversaries may achieve persistence by adding a program to a startup folder or referencing it with a Registry run key. Adding an entry to the "run keys" in the Registry or startup folder will cause the program referenced to be executed when a user logs in.(Citation: Microsoft Run Key) These programs will be executed under the context of the user and will have the account's associated permissions level.
+
+---
+
+From D3FEND Ontology:
+### Concept: Registry Run Keys / Startup Folder (ID: T1060)
+
+**Is a type of:** Persistence Technique
+
+**Definition:**
+Adversaries may achieve persistence by adding a program to a startup folder or referencing it with a Registry run key. Adding an entry to the "run keys" in the Registry or startup folder will cause the program referenced to be executed when a user logs in. (Citation: Microsoft Run Key) These programs will be executed under the context of the user and will have the account's associated permissions level.
+
+---
+
+From D3FEND Ontology:
+### Concept: Remote Access Software (ID: T1219)
+
+**Is a type of:** Command and Control Technique
+
+**Definition:**
+An adversary may use legitimate desktop support and remote access software to establish an interactive command and control channel to target systems within networks. These services, such as `VNC`, `Team Viewer`, `AnyDesk`, `ScreenConnect`, `LogMein`, `AmmyyAdmin`, and other remote monitoring and management (RMM) tools, are commonly used as legitimate technical support software and may be allowed by application control within a target environment.(Citation: Symantec Living off the Land)(Citation: CrowdStrike 2015 Global Threat Report)(Citation: CrySyS Blog TeamSpy)
+--- End of Context ---
+
+Question: what are the best controls for ransamware ?
+
+Answer:
+2025-08-08 22:48:35 - 
+========================= FINAL RESPONSE =========================
+2025-08-08 22:48:35 - Response: To effectively mitigate the risk of Ransomware, organizations should implement a multi-layered approach combining controls from various NIST SP 800-53 Rev. 5 base controls and D3FEND Ontology categories. Here are the recommended best practices:
+
+1. **Configuration Management (SA-10):** This control is crucial as it ensures that all system components, including operating systems, applications, and security tools like antivirus software, are managed effectively throughout their lifecycle. For Ransomware protection:
+   - Maintain strict configuration controls during development to prevent vulnerabilities that could be exploited by attackers.
+   - Regularly patch and update these components using approved change management processes (SA-10(b)).
+   - Document every change in the system, including security tools and configurations (SA-10(d)), which is essential for forensic analysis and recovery efforts following a potential Ransomware attack.
+
+2. **Process Isolation (SC-39):** Implement separate execution domains for each process using techniques like sandboxing or virtualization to prevent lateral movement of malware, including Ransomware, within the network. This can limit damage even if one system is compromised.
+
+3. **Least Functionality (CM-7):** Limit the functionalities and capabilities provided by software components to only those necessary for your mission or operations. By removing unnecessary services and ports, you minimize attack surfaces that Ransomware could exploit.
+   - Configure systems to provide only essential mission-critical functions (CM-7(a)).
+   - Prohibit use of unneeded system features, including communication protocols or software that are not strictly required for your operational needs (CM-7(b)).
+
+4. **Threat Hunting (RA-10):** Regularly and proactively search for indicators of compromise (IOCs) such as abnormal network traffic patterns, unusual file changes, or signs of encryption activities—all potential signs of a Ransomware attack. Early detection with threat hunting can enhance your ability to respond swiftly and effectively.
+   - Establish a cyber threat hunting capability that employs frequency defined by your organization (RA-10(b)).
+
+5. **Secure Software Development Life Cycle Integration:** Incorporate security into all stages of development, from initial planning through deployment. This includes practices like threat modeling to identify potential vulnerabilities and incorporating secure coding standards.
+   - Adhere to appropriate coding standards for preventing common software-based vulnerabilities that Ransomware often targets (CWE-1065).
+
+6. **Application Whitelisting/Blacklisting (CM-2):** Control which applications are allowed or prohibited from running on your systems by maintaining a whitelist of approved, trusted programs.
+   - This practice can prevent unauthorized and potentially malicious software like Ransomware from executing on your systems.
+
+7. **Monitoring for Anomalies:** Utilize monitoring tools that employ behavioral analytics to identify anomalous activities within the network. These could include changes in file access patterns, unusual user or system behaviors indicative of a Ransomware attack being initiated or underway (T1547.001/T1060).
+
+By combining these NIST and D3FEND controls, organizations can create a robust defense strategy against Ransomware threats, ensuring they are well-prepared to prevent infections, detect them early, respond effectively, and maintain operational integrity.
+2025-08-08 22:48:35 - Duration: 536.43 seconds
+2025-08-08 22:48:35 - 
+========================= END OF QUERY =========================
