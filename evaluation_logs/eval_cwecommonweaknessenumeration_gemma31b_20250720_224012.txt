@@ -1,0 +1,257 @@
+============================================================
+             CWE (COMMON WEAKNESS ENUMERATION) RAG EVALUATION LOG
+============================================================
+MODEL: gemma3:1b
+SOURCE: CWE (Common Weakness Enumeration)
+DATE: 2025-07-20T22:40:12.410241
+============================================================
+
+------------------------------------------------------------
+TEST CASE 1: Core Definition
+------------------------------------------------------------
+QUESTION:
+What is CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')?
+
+GOLDEN ANSWER:
+This weakness occurs when software constructs all or part of an SQL command using external input from an untrusted source, which can allow an attacker to modify the syntax of the command. The main consequence is that the attacker can view, modify, or delete database records.
+
+--- NO-RAG RESPONSE (took 102.39 seconds) ---
+  MODEL RESPONSE: Okay, let's break down CWE-89: Improper Neutralization of Special Elements used in an SQL Command – it’s a significant and widely recognized security vulnerability.
+
+**What is CWE-89?**
+
+CWE-89 is a vulnerability defined by the CWE (Common Weakness Enumeration) that describes a specific type of SQL injection attack. It’s named after the vulnerability's core concept: the attacker successfully leverages special elements within an SQL command to manipulate the query and gain unauthorized access or control.
+
+**The Core Issue - "Special Elements"**
+
+The vulnerability arises when an application doesn't properly sanitize or validate user-supplied input before incorporating it into an SQL query.  Instead of strict validation, it *accepts* potentially malicious input and then attempts to use it in the query. This is often done through:
+
+* **Unsanitized Input:** Directly incorporating user-provided data into the SQL query without filtering, escaping, or parameterization.
+* **Using Dynamic SQL:** Creating SQL queries dynamically based on user input, without using a predefined, controlled query structure.
+* **Data Concatenation:**  Simply merging user-provided data into a SQL string without any special handling.
+
+**How it Happens – The Attack Vector**
+
+1. **Exploitation:** An attacker crafts a specially designed input that, when embedded into an SQL query, causes the database to execute a malicious command.
+2. **Lateral Movement:** A successful injection often leads to a breach of other systems and data within the network.
+3. **Privilege Escalation:** In some cases, the attacker can use this vulnerability to gain higher privileges than they should have.
+
+**Why is it Dangerous?**
+
+* **Data Breach:**  Attackers can steal sensitive data like usernames, passwords, credit card numbers, and personal information.
+* **Data Modification:**  They can modify data in the database, corrupting records or even manipulating data entirely.
+* **Data Destruction:**  In extreme cases, attackers can delete or damage data.
+* **Database Control:** They can potentially take control of the entire database server.
+* **Privilege Escalation:** They can manipulate the database to gain administrative privileges.
+
+**Examples of Specific Vulnerabilities (Illustrative - this isn't exhaustive):**
+
+* **Blind SQL Injection:** The attacker only sees the initial query, but the database system handles the remainder of the query without any clear indication of a problem. The attacker can then use this information to craft their malicious query.
+* **Error-Based SQL Injection:** The attacker exploits database errors to inject malicious SQL code.  The database might respond with errors, which the attacker can use to craft queries.
+* **Union-Based SQL Injection:**  The attacker attempts to leverage union operations to manipulate the results.
+
+**Mitigation - Key Strategies**
+
+* **Prepared Statements:**  These are the *most* effective defense. They treat data as data, not as part of the SQL query itself. The database engine knows the data format, so it can safely validate and escape it.
+* **Parameterization:**  Similar to prepared statements, parameterization allows you to send user-provided data to the database in a separate query, making it harder for attackers to craft malicious SQL.
+* **Input Validation:**  Strictly validate all user input *before* it's used in a query.  This involves checking data types, length, and format. *Don't just rely on regex*.
+* **Escaping:** Properly escape special characters in user input before using them in queries. However, escaping is often insufficient on its own.
+* **Least Privilege:** Grant database users only the minimum permissions they need.  Don’t give them administrative privileges unless absolutely necessary.
+* **Web Application Firewalls (WAFs):**  These can help block malicious SQL injection attempts.
+
+**Resources:**
+
+* **OWASP (Open Web Application Security Project):** [https://owasp.org/www-project-cwe-89/](https://owasp.org/www-project-cwe-89/) - This is a comprehensive resource on SQL injection vulnerabilities.
+* **CWE-89 Documentation:** [https://www.cwe-if.org/ CWE-89/](https://www.cwe-if.org/ CWE-89/) - The official documentation on the vulnerability.
+
+**In short, CWE-89 underscores the critical importance of securing database interactions with user-provided data – it's about designing applications that are inherently resistant to these attacks.**
+
+Do you have any specific aspects of CWE-89 you'd like me to elaborate on, such as:
+
+*   Specific mitigation techniques?
+*   Examples of vulnerability types?
+*   How CWE-89 relates to other security issues?
+
+--- RAG RESPONSE (took 37.58 seconds) ---
+  [DEBUG] CONTEXT SENT TO LLM:
+The messages need to strike the balance between being too cryptic (which can confuse users) or being too detailed (which may reveal more than intended). The messages should not reveal the methods that were used to determine the error. Attackers can use detailed information to refine or optimize their original attack, thereby increasing their chances of success. If errors must be captured in some detail, record them in log messages, but consider what could occur if the log messages can be viewed by attackers. Highly sensitive information such as passwords should never be saved to log files. Avoid inconsistent messaging that might accidentally tip off an attacker about internal state, such as whether a user account exists or not. In the context of SQL Injection, error messages revealing the structure of a SQL query can help attackers tailor successful attack strings. Operation Firewall Use an application firewall that can detect attacks against this weakness. It can be beneficial in cases in which the code cannot be fixed (because it is controlled by a third party), as an emergency prevention measure while more comprehensive software assurance measures are applied, or to provide defense in depth. Moderate An application firewall might not cover all possible input vectors. In addition, attack techniques might be available to bypass the protection mechanism, such as using malformed inputs that can still be processed by the component that receives those inputs. Depending on functionality, an application firewall might inadvertently reject or modify legitimate requests. Finally, some manual effort may be required for customization. Operation Implementation Environment Hardening When using PHP, configure the application so that it does not use register_globals. During implementation, develop the application so that it does not rely on this feature, but be wary of implementing a register_globals emulation that is subject to weaknesses such as CWE-95, CWE-621, and similar issues.
+
+Related Attack Patterns (CAPEC): 108, 109, 110, 470, 66, 7.
+
+---
+
+Weakness Name: Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection') (ID: CWE-90). Abstraction: Base.
+Description: The product constructs all or part of an LDAP query using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended LDAP query when it is sent to a downstream component.
+
+Common Consequences: Confidentiality Integrity Availability Execute Unauthorized Code or Commands Read Application Data Modify Application Data An attacker could include input that changes the LDAP query which allows unintended commands or code to be executed, allows sensitive data to be read or modified or causes other unintended behavior.
+
+Potential Mitigations: Implementation Input Validation Assume all input is malicious. Use an "accept known good" input validation strategy, i.e., use a list of acceptable inputs that strictly conform to specifications. Reject any input that does not strictly conform to specifications, or transform it into something that does. When performing input validation, consider all potentially relevant properties, including length, type of input, the full range of acceptable values, missing or extra inputs, syntax, consistency across related fields, and conformance to business rules. As an example of business rule logic, "boat" may be syntactically valid because it only contains alphanumeric characters, but it is not valid if the input is only expected to contain colors such as "red" or "blue." Do not rely exclusively on looking for malicious or malformed inputs. This is likely to miss at least one undesirable input, especially if the code's environment changes. This can give attackers enough room to bypass the intended validation. However, denylists can be useful for detecting potential attacks or determining which inputs are so malformed that they should be rejected outright.
+
+Related Attack Patterns (CAPEC): 136.
+
+---
+
+Weakness Name: Improper Neutralization of Special Elements in Data Query Logic (ID: CWE-943). Abstraction: Class.
+Description: The product generates a query intended to access or manipulate data in a data store such as a database, but it does not neutralize or incorrectly neutralizes special elements that can modify the intended logic of the query.
+Extended Description: Depending on the capabilities of the query language, an attacker could inject additional logic into the query to: Modify the intended selection criteria, thus changing which data entities (e.g., records) are returned, modified, or otherwise manipulated Append additional commands to the query Return more entities than intended Return fewer entities than intended Cause entities to be sorted in an unexpected way The ability to execute additional commands or change which entities are returned has obvious risks. But when the product logic depends on the order or number of entities, this can also lead to vulnerabilities. For example, if the query expects to return only one entity that specifies an administrative user, but an attacker can change which entities are returned, this could cause the logic to return information for a regular user and incorrectly assume that the user has administrative privileges. While this weakness is most commonly associated with SQL injection, there are many other query languages that are also subject to injection attacks, including HTSQL, LDAP, DQL, XQuery, Xpath, and "NoSQL" languages.
+
+Common Consequences: Confidentiality Integrity Availability Access Control Bypass Protection Mechanism Read Application Data Modify Application Data Varies by Context
+
+Related Attack Patterns (CAPEC): 676.
+
+---
+
+Weakness Name: Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection') (ID: CWE-917). Abstraction: Base.
+Description: The product constructs all or part of an expression language (EL) statement in a framework such as a Java Server Page (JSP) using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended EL statement before it is executed.
+Extended Description: Frameworks such as Java Server Page (JSP) allow a developer to insert executable expressions within otherwise-static content. When the developer is not aware of the executable nature of these expressions and/or does not disable them, then if an attacker can inject expressions, this could lead to code execution or other unexpected behaviors.
+
+Common Consequences: Confidentiality Read Application Data Integrity Execute Unauthorized Code or Commands
+
+Potential Mitigations: Architecture and Design Avoid adding user-controlled data into an expression interpreter when possible. Implementation If user-controlled data must be added to an expression interpreter, one or more of the following should be performed: Validate that the user input will not evaluate as an expression Encode the user input in a way that ensures it is not evaluated as an expression System Configuration Operation The framework or tooling might allow the developer to disable or deactivate the processing of EL expressions, such as setting the isELIgnored attribute for a JSP page to "true".
+
+---
+
+Weakness Name: Improper Neutralization (ID: CWE-707). Abstraction: Pillar.
+Description: The product does not ensure or incorrectly ensures that structured messages or data are well-formed and that certain security properties are met before being read from an upstream component or sent to a downstream component.
+Extended Description: If a message is malformed, it may cause the message to be incorrectly interpreted. Neutralization is an abstract term for any technique that ensures that input (and output) conforms with expectations and is "safe." This can be done by: checking that the input/output is already "safe" (e.g. validation) transformation of the input/output to be "safe" using techniques such as filtering, encoding/decoding, escaping/unescaping, quoting/unquoting, or canonicalization preventing the input/output from being directly provided by an attacker (e.g. "indirect selection" that maps externally-provided values to internally-controlled values) preventing the input/output from being processed at all This weakness typically applies in cases where the product prepares a control message that another process must act on, such as a command or query, and malicious input that was intended as data, can enter the control plane instead. However, this weakness also applies to more general cases where there are not always control implications.
+
+Common Consequences: Other Other
+
+Related Attack Patterns (CAPEC): 250, 276, 277, 278, 279, 3, 43, 468, 52, 53, 64, 7, 78, 79, 83, 84.
+
+  MODEL RESPONSE: The provided context does not contain a specific answer to this question.
+
+============================================================
+
+------------------------------------------------------------
+TEST CASE 2: Relationships
+------------------------------------------------------------
+QUESTION:
+What are the related CAPEC attack patterns for CWE-79: Cross-Site Scripting (XSS)?
+
+GOLDEN ANSWER:
+Related attack patterns for XSS include CAPEC-18, CAPEC-19, CAPEC-244, CAPEC-588, CAPEC-591, and CAPEC-63, which describe various methods of injecting and executing malicious scripts in a user's web browser.
+
+--- NO-RAG RESPONSE (took 83.44 seconds) ---
+  MODEL RESPONSE: Okay, let's dive into the CAPEC attack patterns specifically related to CWE-79: Cross-Site Scripting (XSS). We'll break down the CAPEC elements to understand how they're used and how they manifest.  This is a complex topic, so we'll focus on the key ones.
+
+**Understanding CAPEC – A Quick Recap**
+
+CAPEC stands for **Control-Flow-Analysis-Evaluation-C** – it's a method for analyzing attack patterns.  The CAPEC elements are used to assess the attack's complexity and potential impact.  They're essentially a framework for understanding how an attacker might try to exploit a vulnerability.
+
+**The CAPEC Elements for XSS**
+
+Here's a breakdown of the CAPEC elements most relevant to XSS attacks, along with explanations and examples:
+
+**1. Control-Flow-Analysis (C)** - This focuses on the *intent* of the attacker.  They're trying to hijack the program's execution path.
+
+* **C0 -  No Control -** The attacker isn’t actively controlling the program’s flow.  They’re simply attempting to inject malicious code and see what happens. This is a lower-intensity attack.
+* **C1 -  Full Control -** The attacker *is* controlling the program’s flow. They’re actively trying to inject malicious code into a critical area that can directly influence the program's execution.  This is a more serious attack.
+
+
+**2. Analysis-Based (A)** - This is where we evaluate the *techniques* used.  This is the core of CAPEC.  The attacker employs various techniques.
+
+* **A0 -  Simple Script -** The attacker starts with very basic, easily detectable JavaScript code.  It's a rudimentary attempt.  It's likely to be easily caught and won’t lead to significant impact.
+* **A1 -  Advanced Script -** The attacker introduces more complex logic, potential for variable substitution, and potentially redirects the script's execution.
+* **A2 -  Dynamic Script -** The attacker uses a dynamic or user-supplied variable in the script.  This significantly increases the attack surface because the attacker has the opportunity to introduce malicious values.  This is a core component for XSS exploits.
+* **A3 -  Script with Output/Input -** The script directly uses the user's input to construct the output, making it easier to manipulate and inject malicious content.
+* **A4 -  Script with Multiple Output/Input -** The script might have multiple input parameters.  This increases the potential impact of the attack.
+* **A5 -  Script with Script Execution -**  The attacker attempts to make the script run, potentially leading to arbitrary code execution.
+
+
+**3. Evaluation (E)** -  This examines the *impact* of the attempted techniques.  How much damage are we talking about?
+
+* **E0 -  No Impact -** The attacker's input doesn't cause any significant harm. The attacker is simply trying to test a basic vulnerability.
+* **E1 -  Minor Impact -**  The attacker's input leads to a small, localized problem that's easy to fix.  It's a reactive attack.
+* **E2 -  Moderate Impact -**  The attacker's input causes a noticeable issue.  It might be a redirect, a display of malicious content, or some other consequence.  It represents a significant risk.
+* **E3 -  Significant Impact -** The attacker's input causes a major problem.  It can potentially compromise the entire system, leading to data theft, unauthorized access, or denial of service.  This is a critical level of risk.
+
+
+**Specific CAPEC Examples for XSS (Illustrative)**
+
+Let's consider a simplified scenario (this will be more detailed with real-world examples later)
+
+**Scenario:** An admin page displays user-supplied input directly in a `<p>` tag.
+
+* **C0 -  No Control -** The attacker is simply trying to observe the page.
+* **A1 -  Advanced Script -** The attacker injects JavaScript to hide the user input.  They might use `document.write()` or similar mechanisms to modify the page's content.
+* **E1 -  Moderate Impact -**  The attacker's injected script might display a user’s name or email address on the page, which could be used for identity theft.
+
+**Scenario:**  An image tag contains a URL that contains a JavaScript injection.
+
+* **C0 -  No Control -** The attacker is simply trying to get the page to display a result.
+* **A2 -  Dynamic Script -** The attacker uses the user input in the URL to construct the script.
+* **E2 -  Moderate Impact -**  The attacker could hijack the user's browsing session and redirect them to a malicious website.
+
+**Important Notes & Caveats:**
+
+* **This is a simplified representation.** Real-world XSS attacks can be far more complex, involving multiple techniques.
+* **The CAPEC elements are not always perfectly aligned.** An attacker might try to bypass CAPEC elements with more sophisticated techniques.
+* **Context is crucial.** The CAPEC analysis needs to be considered in the context of the overall application and how it’s used.
+
+**Resources for Further Learning:**
+
+* **OWASP XSS Cheat Sheet:** [https://owasp.org/www-project-xss-cheat-sheet/](https://owasp.org/www-project-xss-cheat-sheet/) - Excellent resource for understanding XSS and its CAPEC components.
+* **OWASP Risk Rating:** [https://owasp.org/risk-rating/](https://owasp.org/risk-rating/) – Provides risk assessment for vulnerabilities, including XSS.
+* **CAPEC Documentation:** [https://www.capec-analysis.com/](https://www.capec-analysis.com/)
+
+
+To give you more targeted information, could you tell me:
+
+*   What is the context you're interested in? (e.g., a specific web application, a particular type of XSS)?
+*   Are you interested in a particular CAPEC element or a wider overview of the attack patterns?
+
+--- RAG RESPONSE (took 42.06 seconds) ---
+  [DEBUG] CONTEXT SENT TO LLM:
+Weakness Name: Incomplete Denylist to Cross-Site Scripting (ID: CWE-692). Abstraction: Compound.
+Description: The product uses a denylist-based protection mechanism to defend against XSS attacks, but the denylist is incomplete, allowing XSS variants to succeed.
+Extended Description: While XSS might seem simple to prevent, web browsers vary so widely in how they parse web pages, that a denylist cannot keep track of all the variations. The "XSS Cheat Sheet" [REF-714] contains a large number of attacks that are intended to bypass incomplete denylists.
+
+Common Consequences: Confidentiality Integrity Availability Execute Unauthorized Code or Commands
+
+Related Attack Patterns (CAPEC): 120, 267, 71, 80, 85.
+
+---
+
+ASLR for libraries cannot be used in conjunction with prelink since it would require relocating the libraries at run-time, defeating the whole purpose of prelinking. For more information on these techniques see D3-SAOR (Segment Address Offset Randomization) from D3FEND [REF-1335]. Defense in Depth These techniques do not provide a complete solution. For instance, exploits frequently use a bug that discloses memory addresses in order to maximize reliability of code execution [REF-1337]. It has also been shown that a side-channel attack can bypass ASLR [REF-1333] Operation Environment Hardening Use a CPU and operating system that offers Data Execution Protection (using hardware NX or XD bits) or the equivalent techniques that simulate this feature in software, such as PaX [REF-60] [REF-61]. These techniques ensure that any instruction executed is exclusively at a memory address that is part of the code segment. For more information on these techniques see D3-PSEP (Process Segment Execution Prevention) from D3FEND [REF-1336]. Defense in Depth This is not a complete solution, since buffer overflows could be used to overwrite nearby variables to modify the software's state in dangerous ways. In addition, it cannot be used in cases in which self-modifying code is required. Finally, an attack could still cause a denial of service, since the typical response is to exit the application. Implementation Input Validation Assume all input is malicious. Use an "accept known good" input validation strategy, i.e., use a list of acceptable inputs that strictly conform to specifications. Reject any input that does not strictly conform to specifications, or transform it into something that does. When performing input validation, consider all potentially relevant properties, including length, type of input, the full range of acceptable values, missing or extra inputs, syntax, consistency across related fields, and conformance to business rules. As an example of business rule logic, "boat" may be syntactically valid because it only contains alphanumeric characters, but it is not valid if the input is only expected to contain colors such as "red" or "blue." Do not rely exclusively on looking for malicious or malformed inputs. This is likely to miss at least one undesirable input, especially if the code's environment changes. This can give attackers enough room to bypass the intended validation. However, denylists can be useful for detecting potential attacks or determining which inputs are so malformed that they should be rejected outright. When accessing a user-controlled array index, use a stringent range of values that are within the target array. Make sure that you do not allow negative values to be used. That is, verify the minimum as well as the maximum of the range of acceptable values. Implementation Be especially careful to validate all input when invoking code that crosses language boundaries, such as from an interpreted language to native code. This could create an unexpected interaction between the language boundaries. Ensure that you are not violating any of the expectations of the language with which you are interfacing. For example, even though Java may not be susceptible to buffer overflows, providing a large argument in a call to native code might trigger an overflow. Architecture and Design Operation Environment Hardening Run your code using the lowest privileges that are required to accomplish the necessary tasks [REF-76]. If possible, create isolated accounts with limited privileges that are only used for a single task. That way, a successful attack will not immediately give the attacker access to the rest of the software or its environment. For example, database applications rarely need to run as the database administrator, especially in day-to-day operations. Architecture and Design Operation Sandbox or Jail Run the code in a "jail" or similar sandbox environment that enforces strict boundaries between the process and the operating system. This may effectively restrict which files can be accessed in a particular directory or which commands can be executed by the software. OS-level examples include the Unix chroot jail, AppArmor, and SELinux. In general, managed code may provide some protection. For example, java.io.FilePermission in the Java SecurityManager allows the software to specify restrictions on file operations. This may not be a feasible solution, and it only limits the impact to the operating system; the rest of the application may still be subject to compromise. Be careful to avoid CWE-243 and other weaknesses related to jails. Limited The effectiveness of this mitigation depends on the prevention capabilities of the specific sandbox or jail being used and might only help to reduce the scope of an attack, such as restricting the attacker to certain system calls or limiting the portion of the file system that can be accessed.
+
+Related Attack Patterns (CAPEC): 100.
+
+---
+
+Weakness Name: Compiler Optimization Removal or Modification of Security-critical Code (ID: CWE-733). Abstraction: Base.
+Description: The developer builds a security-critical protection mechanism into the software, but the compiler optimizes the program such that the mechanism is removed or modified.
+
+Common Consequences: Access Control Other Bypass Protection Mechanism Other
+
+Related Attack Patterns (CAPEC): 10, 24, 46, 8, 9.
+
+---
+
+Remember that such inputs may be obtained indirectly through API calls. Many file inclusion problems occur because the programmer assumed that certain inputs could not be modified, especially for cookies and URL components. Operation Firewall Use an application firewall that can detect attacks against this weakness. It can be beneficial in cases in which the code cannot be fixed (because it is controlled by a third party), as an emergency prevention measure while more comprehensive software assurance measures are applied, or to provide defense in depth. Moderate An application firewall might not cover all possible input vectors. In addition, attack techniques might be available to bypass the protection mechanism, such as using malformed inputs that can still be processed by the component that receives those inputs. Depending on functionality, an application firewall might inadvertently reject or modify legitimate requests. Finally, some manual effort may be required for customization.
+
+Related Attack Patterns (CAPEC): 175, 201, 228, 251, 252, 253, 263, 538, 549, 640, 660, 695, 698.
+
+---
+
+Weakness Name: Cleartext Transmission of Sensitive Information (ID: CWE-319). Abstraction: Base.
+Description: The product transmits sensitive or security-critical data in cleartext in a communication channel that can be sniffed by unauthorized actors.
+
+Common Consequences: Integrity Confidentiality Read Application Data Modify Files or Directories Anyone can read the information by gaining access to the channel being used for communication. Many communication channels can be "sniffed" (monitored) by adversaries during data transmission. For example, in networking, packets can traverse many intermediary nodes from the source to the destination, whether across the internet, an internal network, the cloud, etc. Some actors might have privileged access to a network interface or any link along the channel, such as a router, but they might not be authorized to collect the underlying data. As a result, network traffic could be sniffed by adversaries, spilling security-critical data. Integrity Confidentiality Read Application Data Modify Files or Directories Other When full communications are recorded or logged, such as with a packet dump, an adversary could attempt to obtain the dump long after the transmission has occurred and try to "sniff" the cleartext from the recorded communications in the dump itself. Even if the information is encoded in a way that is not human-readable, certain techniques could determine which encoding is being used, then decode the information.
+
+Potential Mitigations: Architecture and Design Before transmitting, encrypt the data using reliable, confidentiality-protecting cryptographic protocols. Implementation When using web applications with SSL, use SSL for the entire session from login to logout, not just for the initial login page. Implementation When designing hardware platforms, ensure that approved encryption algorithms (such as those recommended by NIST) protect paths from security critical data to trusted user applications. Testing Use tools and techniques that require manual (human) analysis, such as penetration testing, threat modeling, and interactive tools that allow the tester to record and modify an active session. These may be more effective than strictly automated techniques. This is especially the case with weaknesses that are related to design and business rules. Operation Configure servers to use encrypted channels for communication, which may include SSL or other secure protocols.
+
+Related Attack Patterns (CAPEC): 102, 117, 383, 477, 65.
+
+  MODEL RESPONSE: The related CAPEC attack patterns for CWE-79: Cross-Site Scripting (XSS) are: 10, 24, 46, 8, 9.
+
+============================================================
+
+
+------------------------------------------------------------
+PERFORMANCE SUMMARY
+------------------------------------------------------------
+Average RAG Response Time:       39.82 seconds
+Average No-RAG Response Time:    92.91 seconds
+Total Test Time:                 265.47 seconds
+------------------------------------------------------------

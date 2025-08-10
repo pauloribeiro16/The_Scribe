@@ -1,0 +1,95 @@
+import os
+import logging
+import re
+from typing import List
+import pdfplumber
+
+from llama_index.core import Document
+
+# --- Helper functions to identify the document's structure ---
+# NOTE: These rules are based on the visual structure of the "CSSLP All-in-One Exam Guide".
+# You can adjust them if your PDF has a different structure.
+
+def is_part_title(line_text):
+    """Identifies titles like 'PART I'"""
+    return re.match(r'^PART\s+[IVXLCDM]+', line_text.strip())
+
+def is_chapter_title(line_text):
+    """Identifies titles like 'CHAPTER 1' or 'CHAPTER 10'"""
+    return re.match(r'^CHAPTER\s+\d+', line_text.strip())
+
+def parse_csslp_guide(file_path: str) -> List[Document]:
+    """
+    Reads the CSSLP Guide PDF, chunks it by chapter and major sections,
+    and creates enriched Document objects for LlamaIndex.
+    """
+    logging.info(f"Parsing CSSLP Guide PDF into structured documents: {file_path}")
+    if not os.path.exists(file_path):
+        logging.error(f"CSSLP Guide PDF not found at: {file_path}")
+        return []
+
+    documents = []
+    source_filename = os.path.basename(file_path)
+    
+    current_part = "Unknown"
+    current_chapter = "Introduction"
+    current_content = ""
+    
+    try:
+        with pdfplumber.open(file_path) as pdf:
+            total_pages = len(pdf.pages)
+            logging.info(f"Opened '{source_filename}'. Total pages: {total_pages}")
+
+            for page_num, page in enumerate(pdf.pages):
+                text = page.extract_text()
+                if not text:
+                    continue
+
+                lines = text.split('\n')
+                for line in lines:
+                    # Logic to save the last chunk before starting a new chapter
+                    if is_chapter_title(line):
+                        if current_content.strip():
+                            # Enrich the text with structural context
+                            enriched_text = f"Part: {current_part}. Chapter: {current_chapter}. Content: {current_content.strip()}"
+                            metadata = {
+                                "source_file": source_filename,
+                                "type": "Guide",
+                                "part": current_part,
+                                "chapter": current_chapter,
+                                "page": page_num 
+                            }
+                            documents.append(Document(text=enriched_text, metadata=metadata))
+                        
+                        # Reset for the new chapter
+                        chapter_full_title = ' '.join(line.strip().split()) # Cleans up any extra spaces
+                        current_chapter = chapter_full_title
+                        current_content = ""
+                        logging.info(f"Found new chapter on page {page_num + 1}: '{current_chapter}'")
+
+                    # Update the current Part when found
+                    elif is_part_title(line):
+                        current_part = ' '.join(line.strip().split())
+
+                    # Otherwise, it's content
+                    else:
+                        current_content += line + " "
+
+            # Append the very last chunk after the loop finishes
+            if current_content.strip():
+                enriched_text = f"Part: {current_part}. Chapter: {current_chapter}. Content: {current_content.strip()}"
+                metadata = {
+                    "source_file": source_filename,
+                    "type": "Guide",
+                    "part": current_part,
+                    "chapter": current_chapter,
+                    "page": total_pages
+                }
+                documents.append(Document(text=enriched_text, metadata=metadata))
+
+    except Exception as e:
+        logging.error(f"Failed to parse PDF {file_path}: {e}")
+        return []
+
+    logging.info(f"Successfully parsed and enriched {len(documents)} documents from the CSSLP Guide.")
+    return documents
