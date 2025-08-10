@@ -69,8 +69,6 @@ The Scribe is built on a sophisticated, multi-layered AI architecture designed f
 
 ## Project Status
 
-`[TODO: Briefly describe the current status of the project. For example:]`
-
 This project is currently under active development. The core RAG engine and the DSS Co-Pilot for SPIDESOFT Phase 1 are implemented and functional. Future work will focus on:
 *   Implementing the interactive guide for SPIDESOFT Phase 2 (Elaboration and Secure Design).
 *   Integrating a Knowledge Graph to enhance the understanding of relationships between entities.
@@ -79,4 +77,4 @@ This project is currently under active development. The core RAG engine and the 
 
 ## Acknowledgements
 
-This project was developed in the context of a Master's Thesis at `[TODO: Your University/Institution]`. The core methodology, SPIDESOFT, is an original contribution aimed at improving the state of the art in secure software engineering.
+This project was developed in the context of a PhD's Thesis at `Minho University`. The core methodology, SPIDESOFT, is an original contribution aimed at improving the state of the art in secure software engineering.
