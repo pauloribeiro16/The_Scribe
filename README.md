@@ -1,6 +1,6 @@
 # The Scribe: An AI Co-Pilot for Secure Software Requirements
 
-**The Scribe is an advanced, AI-powered Decision Support System (DSS) designed to guide software practitioners through the complex process of defining secure and privacy-respecting software requirements.**
+**The Scribe is an AI-powered Decision Support System (DSS) designed to guide software practitioners through the complex process of defining secure and privacy-respecting software requirements.**
 
 Developed as a core component of a Master's thesis on decision support for security requirements, The Scribe acts as an intelligent co-pilot. It embeds the **SPIDESOFT methodology**—a structured, two-phased approach to integrating security from the earliest stages of the software development lifecycle (SDLC).
 
