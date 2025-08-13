@@ -4,23 +4,20 @@ import logging
 import os
 import json
 from datetime import datetime
-from core.ProjectContext import ProjectContext
 
 class DSS_Logger:
-    """
-    A dedicated logger that records the entire interactive flow of a DSS session,
-    capturing user inputs, raw AI responses, parsed AI analysis, and key decisions.
-    """
-    def __init__(self, log_directory="dss_logs"):
-        os.makedirs(log_directory, exist_ok=True)
+    """A dedicated logger that records the entire flow of a DSS session into a unique file."""
+    def __init__(self):
         self.log_filepath = None
         self.logger = None
-        self.turn_counter = 0
 
-    def create_log_file(self):
-        """Creates a new, timestamped log file for the session."""
+    def start_session(self, project_name: str):
+        """Creates and configures a new log file for the session."""
+        log_directory = "dss_logs"
+        os.makedirs(log_directory, exist_ok=True)
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        self.log_filepath = os.path.join("dss_logs", f"dss_session_{timestamp}.log")
+        safe_project_name = project_name.replace(' ', '_').lower()
+        self.log_filepath = os.path.join(log_directory, f"session_{safe_project_name}_{timestamp}.log")
         
         self.logger = logging.getLogger(f"DSS_Logger_{timestamp}")
         self.logger.setLevel(logging.INFO)
@@ -30,52 +27,41 @@ class DSS_Logger:
             self.logger.handlers.clear()
             
         handler = logging.FileHandler(self.log_filepath, encoding='utf-8')
-        # Use a simpler formatter for cleaner multiline logs
-        formatter = logging.Formatter('%(asctime)s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+        formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
         handler.setFormatter(formatter)
         self.logger.addHandler(handler)
         
-        self.logger.info("="*25 + " DSS SESSION STARTED " + "="*25)
-        self.logger.info(f"Log file: {self.log_filepath}")
+        self.info("="*25 + " DSS SESSION STARTED " + "="*25)
+        self.info(f"Project: {project_name}")
 
-    def log_step_start(self, step_name: str):
-        if not self.logger: return
-        self.logger.info("\n" + "="*20 + f" STARTING SPIDESOFT STEP: {step_name} " + "="*20)
-        self.turn_counter = 0 # Reset for each new step
+    def info(self, message):
+        if self.logger:
+            self.logger.info(message)
 
-    def log_interaction_turn(self, user_input: str, raw_ai_response: str, parsed_ai_response: dict):
-        if not self.logger: return
-        self.turn_counter += 1
-        
-        self.logger.info("\n" + "-"*25 + f" INTERACTION TURN #{self.turn_counter} " + "-"*25)
-        self.logger.info(f"[USER INPUT]\n{user_input}\n")
-        
-        # --- LOG THE RAW AI RESPONSE ---
-        self.logger.info(f"[RAW AI (LLM) RESPONSE]\n{raw_ai_response}\n")
-        
-        # --- LOG THE PARSED AI ANALYSIS ---
-        self.logger.info("[PARSED AI ANALYSIS]")
-        self.logger.info(f"  - Refined Purpose: {parsed_ai_response.get('refined_purpose', 'N/A')}")
-        
-        stakeholders = parsed_ai_response.get('identified_stakeholders', {})
-        if stakeholders:
-            self.logger.info(f"  - ID'd Stakeholders: {json.dumps(stakeholders)}")
+    def error(self, message, exc_info=False):
+        if self.logger:
+            self.logger.error(message, exc_info=exc_info)
 
-        self.logger.info(f"  - Analysis/Caution: {parsed_ai_response.get('analysis_and_caution', 'N/A')}")
-        self.logger.info(f"  - Next Question: {parsed_ai_response.get('next_question', 'N/A')}")
-        self.logger.info(f"  - Step Complete?: {parsed_ai_response.get('is_complete', False)}")
-        self.logger.info("-" * 70)
-        
-    def log_user_decision(self, prompt: str, decision: bool):
-        if not self.logger: return
-        self.logger.info(f"\n[USER DECISION POINT]")
-        self.logger.info(f"  - PROMPT: '{prompt}'")
-        self.logger.info(f"  - CHOICE: {'Yes' if decision else 'No'}")
+# In core/DSS_Logger.py, replace the existing log_turn method
 
-    def log_session_end(self, final_context: ProjectContext):
+    def log_turn(self, turn_number, user_input, raw_ai_response, parsed_ai_response, conversation_history):
         if not self.logger: return
-        self.logger.info("\n" + "="*25 + " DSS SESSION ENDED " + "="*25)
-        self.logger.info("\n--- FINAL PROJECT CONTEXT ---")
-        # Use the context's LLM summary method for a dense log output
-        self.logger.info(final_context.get_summary_for_llm())
-        self.logger.info("=" * 70)
+        self.info("-" * 25 + f" INTERACTION TURN #{turn_number} " + "-" * 25)
+        
+        # --- NEW: Log the full conversation history sent to the model ---
+        self.info("[FULL CONTEXT SENT TO LLM]")
+        for message in conversation_history:
+            # --- THE FIX IS HERE ---
+            # ChatMessage objects have .role and .content attributes, not .get() methods.
+            # This is now the correct and simple way to access the data.
+            role = message.role
+            content = message.content
+            # --- END OF FIX ---
+            self.info(f"  - ROLE: {str(role).upper()}\n    CONTENT: {content}\n")
+
+        self.info(f"[USER'S LATEST INPUT]\n{user_input}\n")
+        self.info(f"[RAW AI RESPONSE]\n{raw_ai_response}\n")
+        self.info(f"[PARSED AI RESPONSE]\n{json.dumps(parsed_ai_response, indent=2)}\n")
+
+    def end_session(self):
+        self.info("=" * 25 + " DSS SESSION ENDED " + "=" * 25)

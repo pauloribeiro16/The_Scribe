@@ -1,0 +1,5 @@
+2025-08-12 17:32:14,548 - INFO - ========================= DSS SESSION STARTED =========================
+2025-08-12 17:32:14,548 - INFO - Project: Documents Portal
+2025-08-12 17:32:16,129 - INFO - --- Starting Step: 2.2 Legal & Regulatory Compliance ---
+2025-08-12 17:32:16,129 - INFO - Detected user question. Triggering on-demand RAG for: 'Let's begin. Based on the context, what is the first regulation we should consider?'
+2025-08-12 17:41:29,472 - INFO - Detected user question. Triggering on-demand RAG for: 'What is the nis 2 directive ? '
